@@ -16,7 +16,7 @@ LINE = (
 
 
 def main() -> None:
-    assert 1 <= len(LINE) <= 200, "entry line must be 1-200 characters"
+    assert 1 <= len(LINE) <= 200 and LINE.strip(), "entry must be one non-empty line within the gate"
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(LINE + "\n")
